@@ -1,8 +1,20 @@
 <template>
-  <div class="hello">
-    <h1>What's for lunch today?</h1>
-    <p>{{ restaurant }}</p>
-    <button v-on:click="$emit('new-restaurant')">Nah. Pick something else.</button>
+  <div class="container">
+    <md-card>
+      <md-card-header>
+        <md-card-header-text>
+          <div class="md-title">Today, for lunch, I recommend…</div>
+        </md-card-header-text>
+      </md-card-header>
+
+      <md-card-content>
+        <p class="md-body-2">{{ restaurant }}</p>
+      </md-card-content>
+
+      <md-card-actions>
+        <md-button v-on:click="$emit('new-restaurant')">Nah. Pick something else.</md-button>
+      </md-card-actions>
+    </md-card>
   </div>
 </template>
 
@@ -17,18 +29,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .container .md-card {
+    width: 400px;
+    margin: 4px;
+  }
 </style>
