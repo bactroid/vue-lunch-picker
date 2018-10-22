@@ -6,24 +6,18 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import { mapState } from 'vuex'
 import RestaurantDisplay from './components/RestaurantDisplay.vue'
 
 export default {
   name: 'app',
-  data: () => {
-    return { choice: 'Loading' }
-  },
+  computed : mapState ({
+    choice: state => state.restaurant
+  }),
   methods: {
     getRestaurant () {
-        this.choice = 'Loading'
-        axios.get('https://6zkojio7gj.execute-api.us-east-1.amazonaws.com/dev/lunch')
-          .then(x => {
-            this.choice = x.data.text
-          })
-          .catch(() => {
-            this.choice = 'ERROR'
-          })
+      this.$store.dispatch('updateRestaurant')
     }
   },
   created () {
