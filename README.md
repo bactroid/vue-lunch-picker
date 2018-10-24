@@ -1,5 +1,15 @@
 # lunch-picker
 
+Lunch picker front-end implemented in VueJS.
+
+## Repo Contents
+
+The master branch contains an extremely simple front-end to a web API built to power a Slack slash command.
+
+The vuex branch uses the native Vuex module to emulate Redux or the Elm architecture.
+
+The interface for both apps uses vue-material.
+
 ## Project setup
 ```
 npm install
